@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const palindromeRoutes = require("./pages/Palindrome/palindrome");
-// const contentRoutes = require("./content");
+const anagramRoutes = require("./pages/Anagram/anagram");
+const rotationRoutes = require("./pages/Rotation/rotation");
 app.use("/palindrome/", palindromeRoutes);
-// app.use("/", contentRoutes);
+app.use("/anagram/", anagramRoutes);
+app.use("/rotation/", rotationRoutes);
  
 app.get('/', (request, response) => {
     response.sendFile(__dirname + "/index.html");

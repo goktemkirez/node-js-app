@@ -3,8 +3,9 @@ const router = express.Router();
 
 router.get("/", (request, response) => {
     response.sendFile(__dirname + "/palindrome.html");
-}).get("/checkPalindrome", (request, response) => {
-    var str = request.query.str;
+}).get("/check", (request, response) => {
+    let _str = request.query.str;
+    let str = _str.replace(/\,/g, "").replace(/\./g, "").replace(/\ /g, "");
     var reverseStr = str.split('').reverse().join('');
 
     if(str === reverseStr){
