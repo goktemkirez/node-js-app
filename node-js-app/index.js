@@ -1,15 +1,14 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const { readFile } = require("fs");
-
+const palindromeRoutes = require("./pages/Palindrome/palindrome");
+// const contentRoutes = require("./content");
+app.use("/palindrome/", palindromeRoutes);
+// app.use("/", contentRoutes);
+ 
 app.get('/', (request, response) => {
-    readFile('./home.html', 'utf8', (err, html) => {
-        if(err){
-            response.status(500).send('sorry, out of order')
-        }
-
-        response.send(html);
-    })
+    response.sendFile(__dirname + "/index.html");
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('App available on http://localhost:3000'));
+app.listen(3000, () => {
+    console.log('App available on http://localhost:3000');
+});

@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Simple hello world</title>
+        <style>
+            .prompt {
+                font-size: 16px;
+                color: brown;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            .container {
+                width: 50%;
+            }
+            .left-pane {
+                width: 50%;
+                float: left;
+            }
+            .right-pane {
+                width: 50%;
+                float: right;
+            }
+            .submit-name {
+                clear: both;
+            }
+        </style>
+    </head>
+<body>
+    <h1>Palindrome Check</h1>
+
+    <form method='GET' action="/palindrome/checkPalindrome">
+        <div class="container">
+            <div class="prompt left-pane">
+                <span>Enter the text that will be checked</span>
+            </div>
+            <div class="right-pane">
+                <input type="text" id="str" name="str" />
+            </div>
+        </div>
+        <div class="submit-name">
+            <input type="submit" value="Check" />
+        </div>
+        </div>
+    </form>
+</body>
+</html>
