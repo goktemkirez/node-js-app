@@ -18,7 +18,7 @@ router.get("/", (request, response) => {
             return s[0].toUpperCase() + s.substring(1).toLowerCase()
         }).join(' ');
 
-    response.send("Reversed string is : " + title);
+    response.send("Transformed Title : " + title);
 });
 
 module.exports = router;

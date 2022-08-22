@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Random String Generator</title>
+        <style>
+            .prompt {
+                font-size: 16px;
+                color: brown;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+            .container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
+            }
+            .left-pane {
+                width: 50%;
+                float: left;
+            }
+            .right-pane {
+                width: 50%;
+                float: right;
+            }
+            .submit-name {
+                clear: both;
+            }
+        </style>
+    </head>
+<body>
+    <h1>Random String Generator</h1>
+
+    <form method='GET' action="/random-string/check">
+        <div class="container">
+            <div class="prompt left-pane">
+                <span>Enter the text length</span>
+            </div>
+            <div class="right-pane">
+                <input type="number" id="length" name="length" />
+            </div>
+        </div>
+        <div class="container">
+            <div class="prompt left-pane">
+                <span>Choose Characters</span>
+            </div>
+            <div class="right-pane">
+                <select id="content" name="content">
+                    <option value="onlyAlpha">Alpha</option>
+                    <option value="onlyNumeric">Numeric</option>
+                    <option value="both">Both of Them</option>
+                </select>
+            </div>
+        </div>
+        <div class="submit-name">
+            <input type="submit" value="Check" />
+        </div>
+        </div>
+    </form>
+</body>
+</html>
