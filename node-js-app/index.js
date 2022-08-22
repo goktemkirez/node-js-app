@@ -9,6 +9,7 @@ const randomStringRoutes = require("./pages/RandomString/RandomString");
 const visualAlignmentRoutes = require("./pages/VisualAlignment/VisualAlignment");
 const titleCaseRoutes = require("./pages/TitleCase/TitleCase");
 const colorTransitionRoutes = require("./pages/ColorTransition/ColorTransition");
+const intersectionRoutes = require("./pages/Intersection/Intersection");
 app.use("/palindrome/", palindromeRoutes);
 app.use("/anagram/", anagramRoutes);
 app.use("/rotation/", rotationRoutes);
@@ -18,6 +19,7 @@ app.use("/random-string/", randomStringRoutes);
 app.use("/visual-alignment/", visualAlignmentRoutes);
 app.use("/title-case/", titleCaseRoutes);
 app.use("/color-transition/", colorTransitionRoutes);
+app.use("/intersection/", intersectionRoutes);
  
 app.get('/', (request, response) => {
     response.sendFile(__dirname + "/index.html");

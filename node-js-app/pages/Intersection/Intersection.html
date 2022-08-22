@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #mydiv {
+        position: absolute;
+        z-index: 9;
+        text-align: center;
+        border: 1px solid #d3d3d3;
+        cursor: move;
+        background-color: #2196F3;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+    }
+
+    #mydiv2 {
+        position: absolute;
+        z-index: 9;
+        text-align: center;
+        border: 1px solid #d3d3d3;
+        cursor: move;
+        background-color: #2196F3;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<body>
+
+    <div style="left: 0px; top: 0px;" id="mydiv">
+        First Div
+    </div>
+
+    <div style="left: 100px; top: 120px;" id="mydiv2">
+        Second Div
+    </div>
+
+    <script>
+        dragElement(document.getElementById("mydiv"));
+        dragElement(document.getElementById("mydiv2"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+
+
+                //intersection
+                var secondElement = null;
+                if (elmnt === document.getElementById("mydiv")) {
+                    secondElement = document.getElementById("mydiv2");
+                }
+                else {
+                    secondElement = document.getElementById("mydiv");
+                }
+                elmnt.style.zIndex = 10;
+                secondElement.style.zIndex = 9;
+
+                var rect1 = elmnt.getBoundingClientRect();
+                var rect2 = secondElement.getBoundingClientRect();
+                if (rect1.left >= rect2.left - 50 && rect1.left <= rect2.left + 50 && rect1.top >= rect2.top - 50 && rect1.top <= rect2.top + 50)
+                    elmnt.style.backgroundColor = "#000000";
+                else
+                    elmnt.style.backgroundColor = "#2196F3";
+
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
