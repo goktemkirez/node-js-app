@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (request, response) => {
-    response.sendFile(__dirname + "/anagram.html");
+    response.sendFile(__dirname + "/Anagram.html");
 }).get("/check", (request, response) => {
     var str1 = request.query.str1;
     var str2 = request.query.str2;
@@ -13,6 +13,7 @@ router.get("/", (request, response) => {
         response.send('Text lengths are different !');
         return
     }
+    //sort ve === dışında bir çözüm eklencek
     let checkStr1 = str1.split('').sort().join('');
     let checkStr2 = str2.split('').sort().join('');
     if (checkStr1 === checkStr2) {
