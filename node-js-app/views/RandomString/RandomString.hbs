@@ -1,0 +1,19 @@
+<div class="container paddingTop">
+    <form method='GET' action="/random-string/check">
+        <div class="form-group">
+            <label for="length">Enter the text length:</label>
+            <input type="number" id="length" name="length" />
+        </div>
+        <div class="form-group">
+            <label for="content">Choose Characters:</label>
+            <select id="content" name="content">
+                <option value="onlyAlpha">Alpha</option>
+                <option value="onlyNumeric">Numeric</option>
+                <option value="both">Both of Them</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input  type="submit" class="btn btn-primary" value="Check" />
+        </div>
+    </form>
+</div>

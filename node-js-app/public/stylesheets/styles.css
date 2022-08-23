@@ -1,0 +1,95 @@
+body {
+  overflow: hidden;
+}
+
+.viewWrapper {
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.paddingTop{
+  padding-top: 20px;
+}
+
+/* General */
+.prompt {
+  font-size: 16px;
+  color: brown;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.left-pane {
+  width: 50%;
+  float: left;
+}
+
+.right-pane {
+  width: 50%;
+  float: right;
+}
+
+.submit-name {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  clear: both;
+}
+
+/* Visual Alignment */
+.centeredDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  width: 50%;
+  height: 50%;
+}
+
+/* Color Transition */
+#coloredDiv {
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.5s ease;
+}
+
+/* Intersection */
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  cursor: move;
+  background-color: #2196F3;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+}
+
+#mydiv2 {
+  position: absolute;
+  z-index: 9;
+  text-align: center;
+  border: 1px solid #d3d3d3;
+  cursor: move;
+  background-color: #2196F3;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+}

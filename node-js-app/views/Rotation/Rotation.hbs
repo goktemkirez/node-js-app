@@ -1,0 +1,34 @@
+<div class="container paddingTop">
+    <form method='GET' action="/rotation/check">
+        <div class="form-group">
+            <label for="str1">Enter the first text that will be checked:</label>
+            <input type="text" id="str1" name="str1" />
+        </div>
+        <div class="form-group">
+            <label for="str2">Enter the second text that will be checked:</label>
+            <input type="text" id="str2" name="str2" />
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Check" />
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-secondary" value="Counter Clockwise" onclick="leftRotation()" />
+            <input type="button" class="btn btn-secondary" value="Clockwise" onclick="rightRotation()" />
+        </div>
+    </form>
+</div>
+
+<script>
+    function leftRotation() {
+        let str = document.getElementById("str1").value;
+        let tempStr = str.substring(1, str.length) +
+            str.substring(0, 1);
+        document.getElementById("str1").value = tempStr;
+    };
+    function rightRotation() {
+        let str = document.getElementById("str1").value;
+        let tempStr = str.substring(str.length - 1, str.length) +
+            str.substring(0, str.length - 1);
+        document.getElementById("str1").value = tempStr;
+    }
+</script>
